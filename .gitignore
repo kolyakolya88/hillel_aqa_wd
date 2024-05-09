@@ -40,3 +40,4 @@ build/
 /.idea/
 /src/main/resources/
 /.allure/
+/allure-results/
