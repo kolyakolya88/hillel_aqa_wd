@@ -46,6 +46,7 @@ public class Tests {
     public void Authorization() {
         LoginPage loginPage = new LoginPage(driver);
         String currentUrl = loginPage.getCurrentUrl();
+        wait.until(ExpectedConditions.urlToBe(URL + "inventory.html"));
         softAssert.assertEquals(currentUrl, URL + "inventory.html", "Authorization failed");
         softAssert.assertAll();
     }
@@ -56,6 +57,7 @@ public class Tests {
     public void isItemsDisplayed() {
         InventoryPage inventoryPage = new InventoryPage(driver);
         boolean isDisplayed = inventoryPage.isInventoryItemDisplayed();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='inventory_item_desc']")));
         softAssert.assertTrue(isDisplayed);
         softAssert.assertAll();
     }
