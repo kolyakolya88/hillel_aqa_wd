@@ -44,7 +44,10 @@ public class Tests {
         wait = new WebDriverWait(driver, 10);
         driver.get(URL);
         WebElement elem = wait.until(ExpectedConditions.visibilityOfElementLocated(logoLogin));
-        elem.isDisplayed();
+        Boolean element = elem.isDisplayed();
+        if (element == false) {
+            System.out.println("Logo is not displayed");
+        }
         WebElement loginElement = wait.until(ExpectedConditions.visibilityOfElementLocated(loginInput));
         loginElement.sendKeys("standard_user");
         WebElement passwordElement = wait.until(ExpectedConditions.visibilityOfElementLocated(passwordInput));
