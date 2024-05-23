@@ -1,7 +1,7 @@
 package Suites;
 
-import PageObjects.InventoryPage;
-import PageObjects.LoginPage;
+import pages.InventoryPage;
+import pages.LoginPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -32,6 +32,7 @@ public class Tests {
 
     static final String URL = "https://www.saucedemo.com/";
     static final By logo = By.xpath("//div[@class=\"login_logo\"]");
+
     @BeforeTest
     public void setup() {
         ConfigReader configReader = new ConfigReader();
@@ -49,7 +50,7 @@ public class Tests {
     @Test
     @Description("Authorization test")
     @Severity(SeverityLevel.CRITICAL)
-    public void Authorization() {
+    public void authorization() {
         LoginPage loginPage = new LoginPage(driver);
         String currentUrl = loginPage.getCurrentUrl();
         wait.until(ExpectedConditions.urlToBe(URL + "inventory.html"));
@@ -140,7 +141,7 @@ public class Tests {
         localWait.until(ExpectedConditions.visibilityOfElementLocated(logo));
         LoginPage loginPage = new LoginPage(localDriver);
         loginPage.login(username, password);
-         Authorization();
+         authorization();
          isItemsDisplayed();
          checkingSortingLowToHigh();
          checkingSortingHighToLowPrice();
