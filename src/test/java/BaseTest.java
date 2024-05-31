@@ -1,5 +1,3 @@
-package Suites;
-
 import helpers.BasePageHelper;
 import helpers.InventoryPageHelper;
 import helpers.LoginPageHelper;

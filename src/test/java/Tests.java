@@ -1,5 +1,3 @@
-package Suites;
-
 import dataproviders.LoginPageDataProvider;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
